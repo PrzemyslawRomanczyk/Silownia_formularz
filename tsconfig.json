@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es6",
+    "module": "commonjs",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -9,15 +9,34 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "outDir": "dist",
+    "removeComments": true,
+    "baseUrl": "./",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
     ],
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@daos/*": [
+        "src/daos/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@server": [
+        "src/Server"
       ]
     },
     "lib": [
@@ -36,5 +55,8 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "files": [
+    "ts-shim.d.ts"
   ]
 }
