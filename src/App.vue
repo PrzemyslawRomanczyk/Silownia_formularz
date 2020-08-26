@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
+    <Baner></Baner>
     <Form></Form>
     <ListOfUsers></ListOfUsers>
-    <Baner></Baner>
   </div>
 </template>
 
