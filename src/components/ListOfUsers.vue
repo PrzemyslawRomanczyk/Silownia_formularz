@@ -1,16 +1,14 @@
 <template>
-    <div>
-        List of users
-    </div>
+  <div>
+    List of users
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 export default Vue.extend({
-    name: 'ListOfUsers'
-})
+  name: "ListOfUsers"
+});
 </script>
 
-<style lang="sass">
-
-</style>
+<style lang="sass"></style>
