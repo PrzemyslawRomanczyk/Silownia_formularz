@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-md-8">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"
@@ -52,6 +52,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import firebase from 'firebase';
+import {db} from '../db'
+
 export default Vue.extend({
     name: 'Form',
     data() {
@@ -60,18 +63,32 @@ export default Vue.extend({
                 name: '',
                 surname: '',
                 email: '',
-                sex: null
+                sex: null,
             },
             sex: [{ text: 'Select One', value: null }, 'Male', 'Female', 'Dont want to say'],
-            show: true
+            show: true,
+            state: 'loading',
+            errorMessage: ''
         }
     },
     methods: {
-      onSubmit(evt: any) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
+      async onSubmit(evt: any): Promise<void> {
+        evt.preventDefault();
+        try {
+          await db.collection('uzytkownicy').add({
+            name: this.form.name,
+            surnname: this.form.surname,
+            email: this.form.email,
+            sex: this.form.sex,
+            createdDate: this.generateTimeTag()
+          })
+          this.state = 'synced';
+        } catch(error) {
+          this.errorMessage = JSON.stringify(error);
+          this.state = 'error';
+        }
       },
-      onReset(evt: any) {
+      onReset(evt: any):void {
         evt.preventDefault()
         // Reset our form values
         this.form.name = ''
@@ -83,7 +100,12 @@ export default Vue.extend({
         this.$nextTick(() => {
           this.show = true
         })
+      },
+
+      generateTimeTag():Date {
+        return new Date()
       }
+
     }
 })
 </script>

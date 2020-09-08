@@ -1,8 +1,10 @@
 <template>
   <div id="app" class="container">
     <Baner></Baner>
-    <Form></Form>
-    <ListOfUsers></ListOfUsers>
+    <div class="row">
+      <Form></Form>
+      <ListOfUsers></ListOfUsers>
+    </div>
   </div>
 </template>
 
@@ -13,6 +15,9 @@ import Baner from "./components/Baner.vue";
 import Vue from "vue";
 import { component } from "vue/types/umd";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import * as firebase from 'firebase';
+import {firestorePlugin} from 'vuefire';
+Vue.use(firestorePlugin);
 
 export default Vue.extend({
   name: "App",
@@ -21,5 +26,10 @@ export default Vue.extend({
     ListOfUsers,
     Baner
   }
+  // methods: {
+  //   initializeDb(): void {
+  //     firebase.initializeApp(firebaseConfig);
+  //   }
+  //}
 });
 </script>

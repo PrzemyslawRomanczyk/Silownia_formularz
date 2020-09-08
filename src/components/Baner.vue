@@ -4,7 +4,6 @@
       id="carousel-1"
       v-model="slide"
       :interval="5000"
-      controls
       background="#ababab"
       img-width="1024"
       img-height="480"
