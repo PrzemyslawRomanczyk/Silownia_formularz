@@ -77,7 +77,7 @@ export default Vue.extend({
         try {
           await db.collection('uzytkownicy').add({
             name: this.form.name,
-            surnname: this.form.surname,
+            surname: this.form.surname,
             email: this.form.email,
             sex: this.form.sex,
             createdDate: this.generateTimeTag()
@@ -87,16 +87,17 @@ export default Vue.extend({
           this.errorMessage = JSON.stringify(error);
           this.state = 'error';
         }
+        this.$router.push({name: 'FormFinished'})
       },
       onReset(evt: any):void {
-        evt.preventDefault()
+        evt.preventDefault();
         // Reset our form values
-        this.form.name = ''
-        this.form.surname = ''
-        this.form.email = ''
-        this.form.sex = null
+        this.form.name = '';
+        this.form.surname = '';
+        this.form.email = '';
+        this.form.sex = null;
         // Trick to reset/clear native browser form validation state
-        this.show = false
+        this.show = false;
         this.$nextTick(() => {
           this.show = true
         })
@@ -104,7 +105,7 @@ export default Vue.extend({
 
       generateTimeTag():Date {
         return new Date()
-      }
+      },
 
     }
 })

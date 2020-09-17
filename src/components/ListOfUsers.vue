@@ -3,8 +3,8 @@
     New registered users:
     <ul>
       <li  v-for="user of usersData" :key="user['.key']">
-        {{user.id}} <br>
         {{user.name}} <br>
+        {{user.surname}} <br>
         {{user.email}}
       </li>
     </ul>

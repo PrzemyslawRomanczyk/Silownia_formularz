@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <Baner></Baner>
     <div class="row">
-      <Form></Form>
+      <router-view></router-view>
       <ListOfUsers></ListOfUsers>
     </div>
   </div>
@@ -12,6 +12,7 @@
 import Form from "./components/Form.vue";
 import ListOfUsers from "./components/ListOfUsers.vue";
 import Baner from "./components/Baner.vue";
+import HomePage from "./components/HomePage.vue";
 import Vue from "vue";
 import { component } from "vue/types/umd";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
@@ -22,14 +23,8 @@ Vue.use(firestorePlugin);
 export default Vue.extend({
   name: "App",
   components: {
-    Form,
     ListOfUsers,
     Baner
   }
-  // methods: {
-  //   initializeDb(): void {
-  //     firebase.initializeApp(firebaseConfig);
-  //   }
-  //}
 });
 </script>
