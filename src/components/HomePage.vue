@@ -1,7 +1,10 @@
 <template>
   <div class="col-md-8">
-      Hello there!
-      <router-link to="/form"> Register to our gym</router-link>
+      <b-container>
+          Hello there!
+          <br>
+          <router-link to="/form"> Register to our gym</router-link>
+      </b-container>
   </div>
 </template>
 
@@ -14,6 +17,9 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="sass">
-
+<style>
+  .col-md-8{
+    padding: 20px;
+    text-align: center
+  }
 </style>

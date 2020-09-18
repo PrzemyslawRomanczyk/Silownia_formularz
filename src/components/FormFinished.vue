@@ -15,6 +15,9 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="sass">
-
+<style>
+  .col-md-8{
+    padding: 20px;
+    text-align: center
+  }
 </style>

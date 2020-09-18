@@ -72,7 +72,7 @@ export default Vue.extend({
         }
     },
     methods: {
-      async onSubmit(evt: any): Promise<void> {
+      async onSubmit(evt: MouseEvent): Promise<void> {
         evt.preventDefault();
         try {
           await db.collection('uzytkownicy').add({
@@ -89,7 +89,7 @@ export default Vue.extend({
         }
         this.$router.push({name: 'FormFinished'})
       },
-      onReset(evt: any):void {
+      onReset(evt: MouseEvent):void {
         evt.preventDefault();
         // Reset our form values
         this.form.name = '';
