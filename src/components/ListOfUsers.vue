@@ -24,7 +24,7 @@ export default Vue.extend({
     }
   },
   firestore: {
-    usersData: db.collection('uzytkownicy').orderBy('createdDate', 'desc').limit(3)
+    usersData: db.collection('uzytkownicy').orderBy('createdDate', 'desc').limit(5)
 
   },
   methods: {
