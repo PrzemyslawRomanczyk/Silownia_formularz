@@ -11,9 +11,7 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <b-carousel-slide img-src="../assets/bannerPic1.jpg"></b-carousel-slide>
-      <b-carousel-slide img-src="../assets/bannerPic2.jpg"></b-carousel-slide>
-      <b-carousel-slide img-src="../assets/bannerPic3.jpg"></b-carousel-slide>
+      <b-carousel-slide img-src="../assets/logo.png"></b-carousel-slide>
     </b-carousel>
   </div>
 </template>
