@@ -2,52 +2,31 @@
   <div class="row justify-content-md-center card-content">
     <div class="col-md-8 jumbotron">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <b-form-group
-         id="input-group-1"
-         label="Your Name:"
-         label-for="input-1"
-        >
+        <b-form-group id="input-group-1" label="Login:" label-for="input-1" class="label">
           <b-form-input
             id="input-1"
             v-model="form.name"
-            type="name"
+            type="email"
             required
-            placeholder="Enter your name"
+            placeholder="Enter your email"
           ></b-form-input>
         </b-form-group>
 
         <b-form-group
           id="input-group-2"
-          label="Your Surname:"
+          label="Password:"
           label-for="input-2"
+          class="label"
         >
           <b-form-input
             id="input-2"
-            type="name"
+            type="password"
             v-model="form.surname"
             required
             placeholder="Enter your surname"
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-group-3" label="email:" label-for="input-3">
-          <b-form-input
-            id="input-3"
-            type="email"
-            v-model="form.email"
-            required
-            placeholder="Enter your email"
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group id="input-group-4" label="Sex" label-for="checkboxes-4">
-          <b-form-select
-            id="input-3"
-            v-model="form.sex"
-            :options="sex"
-            required
-          ></b-form-select>
-        </b-form-group>
 
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
@@ -60,6 +39,7 @@
 import Vue from "vue";
 import firebase from "firebase";
 import { db } from "../db";
+
 
 export default Vue.extend({
   name: "Form",

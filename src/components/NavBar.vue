@@ -1,45 +1,62 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand>
-        <img src="../assets/icon.png" alt="logo">
-      </b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="#">Stron Główna</b-nav-item>
-          <b-nav-item href="walidator">Walidator 3D</b-nav-item>
-          <b-nav-item href="#">Poprawa projektu</b-nav-item>
-          <b-nav-item href="#">Kontak</b-nav-item>
-        </b-navbar-nav>
+    <b-navbar toggleable="lg" variant="light" class="navbar">
+        <b-nav is-nav-bar pills fill>
+          <b-nav-item>
+            <b-button variant="light">
+              <router-link to="/">Main Page</router-link>
+            </b-button>
+          </b-nav-item>
+          <b-nav-item>
+            <b-button variant="light">
+              <router-link to="/Validator">Validator 3D</router-link>
+            </b-button>
+          </b-nav-item>
+          <b-nav-item>
+            <b-button variant="light">
+              <router-link to="/Reapir">Project Repair</router-link>
+            </b-button>
+          </b-nav-item>
+          <b-nav-item>
+            <b-button variant="light">
+              <router-link to="/Contact">Contact</router-link>
+            </b-button>
+          </b-nav-item>
+        </b-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>Moje konto</em>
+              <b-button variant="light">
+                <em>Account</em>
+              </b-button>
             </template>
-            <b-dropdown-item href="#">Profil</b-dropdown-item>
-            <b-dropdown-item href="#">Wyloguj się</b-dropdown-item>
+            <b-dropdown-item>
+              <router-link to="/User">My Account</router-link>
+            </b-dropdown-item>
+            <b-dropdown-item>
+              <router-link to="/">Logout</router-link>
+            </b-dropdown-item>
+            <b-dropdown-item>
+              <router-link to="/Login">Login</router-link>
+            </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
-      </b-collapse>
     </b-navbar>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import {db} from '../db'
-
 export default Vue.extend({
   name: "NavBar"
 });
 </script>
 
 <style>
-
+.navbar {
+ opacity: 0.5;
+}
 </style>
