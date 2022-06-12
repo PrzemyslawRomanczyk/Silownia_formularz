@@ -1,12 +1,14 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HomePage from "./components/HomePage.vue";
-import Validator from "./components/Validator.vue";
-import Repair from "./components/Repair.vue";
-import ContactPage from "./components/Contact.vue";
-import Login from "./components/Login.vue";
-import User from "./components/Form.vue";
-import Employee from "./components/Employee.vue";
+import HomePage from "./views/HomePage.vue";
+import Validator from "./views/Validator.vue";
+import Repair from "./views/Repair.vue";
+import ContactPage from "./views/Contact.vue";
+import LoginPage from "./views/LoginPage.vue";
+import Register from "./views/Register.vue";
+import AfterRegister from "./views/AfterRegister.vue";
+import UserDashboard from "./views/UserDashboard.vue";
+import FileTransfer from "./views/FileTransfer.vue";
 
 Vue.use(Router);
 
@@ -33,20 +35,30 @@ export default new Router({
       component: ContactPage 
     },
     {
-      path: "/Login",
-      name: "Login",
-      component: Login 
+      path: "/LoginPage",
+      name: "LoginPage",
+      component: LoginPage
     },
     {
-      path: "/User",
-      name: "User",
-      component: User 
+      path: "/UserDashboard",
+      name: "UserDashboard",
+      component: UserDashboard 
     },
     {
-      path: "/Employee",
-      name: "Employee",
-      component: Employee 
-    }
+      path: "/Register",
+      name: "Register",
+      component: Register 
+    },
+    {
+      path: "/AfterRegister",
+      name: "AfterRegister",
+      component: AfterRegister 
+    },
+    {
+      path: "/FileTransfer",
+      name: "FileTransfer",
+      component: FileTransfer 
+    },
   ],
   scrollBehavior: to => {
     if (to.hash) {
